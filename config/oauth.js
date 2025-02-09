@@ -5,10 +5,9 @@ import { User } from "../models/index.js";
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "838195822163-pm2sfkao6ljk3ss64sous14e3rkbikva.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "http://localhost:4500/auth/callback",
+      clientID: process.env.OAUTH_CLIENT_ID,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      callbackURL: process.env.OAUTH_CALLBACK_URL,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
