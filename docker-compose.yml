@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: attendance-api
+    build: .
+    restart: always
+    ports:
+      - "4500:4500"
+    depends_on:
+      - db
+      - redis
+      - elasticsearch
+    env_file:
+      - .env 
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+    command: npm start
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+      POSTGRES_DB: ${PGDATABASE}
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9201:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+volumes:
+  postgres_data:
+  redis_data:
+  elasticsearch_data:

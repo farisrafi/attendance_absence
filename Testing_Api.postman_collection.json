@@ -1,0 +1,817 @@
+{
+	"info": {
+		"_postman_id": "6d279729-8d23-4b50-baaf-76790443ca5a",
+		"name": "Testing_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6825753",
+		"_collection_link": "https://red-flare-2896.postman.co/workspace/AdamLabs-Api-Service~35b30793-f3b5-4aa3-9abf-c58f237b6ded/collection/6825753-6d279729-8d23-4b50-baaf-76790443ca5a?action=share&source=collection_link&creator=6825753"
+	},
+	"item": [
+		{
+			"name": "clock_in",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkwOTU5NjUsImV4cCI6MTczOTEyNDc2NX0.JEMwzZO_1tW8cHq1LitJLTLJNxfXetWOALFo7L0x6Dg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4500/attendance/clock_in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"attendance",
+						"clock_in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/attendance/clock_in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"clock_in"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-odgPdxYFQjFRrLnFxPwUFHxsE+0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 12:03:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Clock-in successful\"\n}"
+				},
+				{
+					"name": "error response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/attendance/clock_in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"clock_in"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-cHoK2+6Ap3sItaAHTaLBDG8sKJE\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "connect.sid=s%3AwX7__UxcdavTIb7hhOPAfdtRO8hvng8a.gpnZKxBmXdclULcyfPeOILb%2FGAvM6XD8DGoZCwGP9zU; Path=/; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:35:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"You have not clocked out\"\n}"
+				}
+			]
+		},
+		{
+			"name": "clock_out",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkwOTU5NjUsImV4cCI6MTczOTEyNDc2NX0.JEMwzZO_1tW8cHq1LitJLTLJNxfXetWOALFo7L0x6Dg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4500/attendance/clock_out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"attendance",
+						"clock_out"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/attendance/clock_out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"clock_out"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-RGOh9gzwFFOt/gXBLgxefTP1rz4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:36:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Clock-out successful\"\n}"
+				},
+				{
+					"name": "error response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/attendance/clock_out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"clock_out"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-y/2a/lq76RLh/4aY07dpK56cRT8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:36:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"No active clock-in found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get_report_attendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkwOTU5NjUsImV4cCI6MTczOTEyNDc2NX0.JEMwzZO_1tW8cHq1LitJLTLJNxfXetWOALFo7L0x6Dg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4500/attendance/report?user_id=1&startDate=2025-02-01&endDate=2025-02-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"attendance",
+						"report"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						},
+						{
+							"key": "startDate",
+							"value": "2025-02-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-02-10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful with all filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/attendance/report?user_id=1&startDate=2025-02-01&endDate=2025-02-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"report"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-02-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-02-10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1522"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f2-nFQkxLF3yo97nwFjstz6hD///AY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:44:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"MToi55QBRP4ydqDn4gKf\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T19:56:49.605Z\",\n            \"updated\": \"2025-02-08T19:56:49.605Z\",\n            \"id\": 7,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T19:56:49.603Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Mjoj55QBRP4ydqDnnAIB\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T19:57:38.139Z\",\n            \"updated\": \"2025-02-08T19:57:38.139Z\",\n            \"id\": 8,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T19:57:38.138Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Mzov55QBRP4ydqDnFwKN\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T20:10:10.645Z\",\n            \"updated\": \"2025-02-08T20:10:10.645Z\",\n            \"id\": 9,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T20:10:10.644Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Wu8z6pQB29IRNa3Vg6CW\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T10:13:50.968Z\",\n            \"updated\": \"2025-02-09T10:13:50.968Z\",\n            \"id\": 10,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T10:13:50.963Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"W-9e6pQB29IRNa3VOqC7\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T11:00:31.471Z\",\n            \"updated\": \"2025-02-09T11:00:31.472Z\",\n            \"id\": 11,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T11:00:31.466Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"XO-Y6pQB29IRNa3VRaBl\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T12:03:55.280Z\",\n            \"updated\": \"2025-02-09T12:03:55.280Z\",\n            \"id\": 12,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T12:03:55.226Z\",\n            \"clock_out\": null\n        }\n    }\n]"
+				},
+				{
+					"name": "successful with filter user_id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/attendance/report?user_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"attendance",
+								"report"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "startDate",
+									"value": "2025-02-01",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "2025-02-10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1522"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f2-nFQkxLF3yo97nwFjstz6hD///AY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:47:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"MToi55QBRP4ydqDn4gKf\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T19:56:49.605Z\",\n            \"updated\": \"2025-02-08T19:56:49.605Z\",\n            \"id\": 7,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T19:56:49.603Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Mjoj55QBRP4ydqDnnAIB\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T19:57:38.139Z\",\n            \"updated\": \"2025-02-08T19:57:38.139Z\",\n            \"id\": 8,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T19:57:38.138Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Mzov55QBRP4ydqDnFwKN\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-08T20:10:10.645Z\",\n            \"updated\": \"2025-02-08T20:10:10.645Z\",\n            \"id\": 9,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-08T20:10:10.644Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"Wu8z6pQB29IRNa3Vg6CW\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T10:13:50.968Z\",\n            \"updated\": \"2025-02-09T10:13:50.968Z\",\n            \"id\": 10,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T10:13:50.963Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"W-9e6pQB29IRNa3VOqC7\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T11:00:31.471Z\",\n            \"updated\": \"2025-02-09T11:00:31.472Z\",\n            \"id\": 11,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T11:00:31.466Z\",\n            \"clock_out\": null\n        }\n    },\n    {\n        \"_index\": \"attendance\",\n        \"_type\": \"_doc\",\n        \"_id\": \"XO-Y6pQB29IRNa3VRaBl\",\n        \"_score\": 2,\n        \"_source\": {\n            \"status\": true,\n            \"created\": \"2025-02-09T12:03:55.280Z\",\n            \"updated\": \"2025-02-09T12:03:55.280Z\",\n            \"id\": 12,\n            \"user_id\": 1,\n            \"clock_in\": \"2025-02-09T12:03:55.226Z\",\n            \"clock_out\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get_token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4500/auth/get_token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"auth",
+						"get_token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/auth/get_token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"auth",
+								"get_token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b9-dl927vyr4bUsHQwVfy3UNGUHVnw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 14:53:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Get token successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkxMTI4MDIsImV4cCI6MTczOTE0MTYwMn0.xn2yfKVnXGdKlFgVz5EojrHMBd4vfmp1gNhy2gRv2q4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get_user_profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkwOTU5NjUsImV4cCI6MTczOTEyNDc2NX0.JEMwzZO_1tW8cHq1LitJLTLJNxfXetWOALFo7L0x6Dg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4500/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successful response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-cetOYunHsRJnUOxXMUb1O5Cb5HI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 12:06:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"faris\",\n    \"email\": \"faris@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit_profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE3MzkwOTU5NjUsImV4cCI6MTczOTEyNDc2NX0.JEMwzZO_1tW8cHq1LitJLTLJNxfXetWOALFo7L0x6Dg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"name\": \"fariss\",\r\n    \"email\": \"farisrafiabdillah07@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4500/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4500",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit_profile",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"name\": \"fariss\",\r\n    \"email\": \"farisrafiabdillah07@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"99-KsjsBP4SE8vl/K6TigKgt6AY/y0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Feb 2025 12:10:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"fariss\",\n    \"email\": \"farisrafiabdillah@07@gmail.com\",\n    \"status\": true,\n    \"created\": \"2025-02-09T02:22:20.000Z\",\n    \"updated\": \"2025-02-09T02:22:23.000Z\"\n}"
+				}
+			]
+		}
+	]
+}
